@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Dojo Survey</h1>
+        <form action="/process" method="post">
+            <div class="mb-3">
+                <label class="form-label" for="user_name">Your name:</label>
+                <input class="form-control" type="text" name="user_name" id="user_name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Dojo location:</label>
+                <select class="form-select" name="location" id="location">
+                    <option value="San Jose">San Jose</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Online">Online</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="fav_language">Favorite language:</label>
+                <select class="form-select" name="fav_language" id="fav_language">
+                    <option value="HTML">HTML</option>
+                    <option value="css">css</option>
+                    <option value="Python">Python</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="SQL queries">SQL queries</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <p>Preferred operating system:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pref_op" id="linux" value="GNU/Linux">
+                    <label class="form-check-label" for="linux">GNU/Linux</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pref_op" id="mac" value="Mac">
+                    <label class="form-check-label" for="mac">Apple Mac</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pref_op" id="windows" value="Windows">
+                    <label class="form-check-label" for="windows">Windows</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <p>Acceptable coding snacks</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="snack1" id="snack1" value="Skittles">
+                    <label for="snack1" class="form-check-label">Skittles</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="snack2" id="snack2" value="Rollos">
+                    <label for="snack2" class="form-check-label">Rollos</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="snack3" id="snack3" value="Cheetos">
+                    <label for="snack3" class="form-check-label">Cheetos</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="snack4" id="snack4" value="Dr. Pepper">
+                    <label for="snack4" class="form-check-label">Dr. Pepper</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="comment">Comment (optional):</label>
+                <textarea class="form-control" name="comment" id="comment" rows="3"></textarea>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
