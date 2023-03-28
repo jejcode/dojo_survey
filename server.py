@@ -11,12 +11,12 @@ def survey():
 def process_form():
     session['data'] = request.form # saves all form data in session
     snacks = []
-    for n in range(1,5):
+    for n in range(1,5): # check to see if any snacks were selected
         key = 'snack' + str(n)
         if key in request.form:
-            snacks.append(session['data'][key])
+            snacks.append(session['data'][key]) # add snack to snack list
     if len(snacks) > 0:
-        session['snacks'] = snacks
+        session['snacks'] = snacks # if there is a snack list, add it to session for results route
     return redirect('/result') # redirect to avoid repeated inputs
 
 @app.route('/result')
